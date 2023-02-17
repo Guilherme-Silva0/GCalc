@@ -26,10 +26,10 @@ const Calculadora = () => {
         <Button>2</Button>
         <Button>3</Button>
         <Button>+</Button>
-        <Button>0</Button>
+        <Button style={{ borderRadius: "0 0 0 8px" }}>0</Button>
         <Button>.</Button>
         <Button>{"<-"}</Button>
-        <Button>=</Button>
+        <Button style={{ borderRadius: "0 0 8px 0" }}>=</Button>
       </div>
     </div>
   );
