@@ -1,9 +1,9 @@
 import React from "react";
 
-import "./App.css";
+import Calculadora from "./components/Calculadora";
 
 const App = () => {
-  return <h1>Eita</h1>;
+  return <Calculadora />;
 };
 
 export default App;
