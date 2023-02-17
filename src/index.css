@@ -1,9 +1,10 @@
-body {
+* {
   margin: 0;
-  font-family: "Outfit", sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Orbitron", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body {
+  background-color: #111827;
 }
