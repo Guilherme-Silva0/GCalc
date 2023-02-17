@@ -1,0 +1,14 @@
+.btn {
+  border: none;
+  background-color: #111827;
+  color: #efefef;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  aspect-ratio: 4/4;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.btn:hover {
+  opacity: 0.5;
+}
