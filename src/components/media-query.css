@@ -1,0 +1,8 @@
+@media (max-width: 550px) {
+  .container {
+    width: 85vw !important;
+  }
+}
+
+@media (max-width: 850px) and (min-width: 551px) {
+}
