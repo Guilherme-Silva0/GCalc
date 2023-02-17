@@ -30,6 +30,13 @@ const App = () => {
     setScrenValue(screenValue + digit);
   };
 
+  const clear = () => {
+    setOperated(false);
+    setScrenValue("");
+    setResult(0);
+    setAccumulator(0);
+  };
+
   return <Calculadora />;
 };
 
