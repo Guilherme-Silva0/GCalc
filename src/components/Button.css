@@ -2,15 +2,15 @@
   border: none;
   background-color: #111827;
   color: #efefef;
-  transition: 0.2s ease-in-out;
   cursor: pointer;
   aspect-ratio: 4/4;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   outline: none;
+  transition: 0.1s ease-in-out;
 }
 
-.btn:hover {
+.btn:active {
   opacity: 0.5;
   transform: scale(1.1);
 }
