@@ -1,9 +1,8 @@
 .painel {
   width: 100%;
-  min-height: 62px;
+  min-height: 72px;
   padding: 8px;
   background-color: #efefef;
-  color: #111827;
   border-radius: 8px 8px 0 0;
   display: flex;
   justify-content: flex-end;
@@ -13,9 +12,11 @@
 }
 
 .painel .operation {
-  font-size: 1rem;
+  font-size: 1.2rem;
+  color: #1f2937;
 }
 
 .painel .result {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  color: #111827;
 }
