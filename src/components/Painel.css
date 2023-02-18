@@ -9,6 +9,7 @@
   align-items: flex-end;
   flex-direction: column;
   font-weight: bold;
+  overflow-x: hidden;
 }
 
 .painel .operation {
