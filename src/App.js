@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { evaluate } from "mathjs";
 
 import Calculadora from "./components/Calculadora";
 
@@ -76,7 +77,7 @@ const App = () => {
 
     try {
       if (screenValue !== "") {
-        const res = eval(screenValue);
+        const res = evaluate(screenValue);
         setResult(res);
         setOperated(true);
       }
