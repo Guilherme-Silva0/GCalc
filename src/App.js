@@ -37,6 +37,25 @@ const App = () => {
     setAccumulator(0);
   };
 
+  const operation = (oper) => {
+    if (oper === "backspace") {
+      let vscreen = screenValue;
+      vscreen = vscreen.substring(0, vscreen.length - 1);
+      setScrenValue(vscreen);
+      setOperated(false);
+      return;
+    }
+
+    try {
+      const res = eval(screenValue);
+      setAccumulator(res);
+      setResult(res);
+      setOperated(true);
+    } catch {
+      setResult("ERRO");
+    }
+  };
+
   return <Calculadora />;
 };
 
