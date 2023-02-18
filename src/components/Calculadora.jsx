@@ -5,31 +5,47 @@ import Button from "./Button";
 
 import "./Calculadora.css";
 
-const Calculadora = () => {
+const Calculadora = ({
+  screenValue,
+  result,
+  clear,
+  HandleAddDigitScreen,
+  operation,
+}) => {
   return (
     <div className="container">
-      <Painel />
+      <Painel screenValue={screenValue} result={result} />
       <div className="buttons-area">
-        <Button>AC</Button>
-        <Button>(</Button>
-        <Button>)</Button>
-        <Button>÷</Button>
-        <Button>7</Button>
-        <Button>8</Button>
-        <Button>9</Button>
-        <Button>X</Button>
-        <Button>4</Button>
-        <Button>5</Button>
-        <Button>6</Button>
-        <Button>-</Button>
-        <Button>1</Button>
-        <Button>2</Button>
-        <Button>3</Button>
-        <Button>+</Button>
-        <Button style={{ borderRadius: "0 0 0 8px" }}>0</Button>
-        <Button>.</Button>
-        <Button>{"<-"}</Button>
-        <Button style={{ borderRadius: "0 0 8px 0" }}>=</Button>
+        <Button onClick={clear}>AC</Button>
+        <Button onClick={() => HandleAddDigitScreen("(")}>(</Button>
+        <Button onClick={() => HandleAddDigitScreen(")")}>)</Button>
+        <Button onClick={() => HandleAddDigitScreen("/")}>÷</Button>
+        <Button onClick={() => HandleAddDigitScreen("7")}>7</Button>
+        <Button onClick={() => HandleAddDigitScreen("8")}>8</Button>
+        <Button onClick={() => HandleAddDigitScreen("9")}>9</Button>
+        <Button onClick={() => HandleAddDigitScreen("*")}>X</Button>
+        <Button onClick={() => HandleAddDigitScreen("4")}>4</Button>
+        <Button onClick={() => HandleAddDigitScreen("5")}>5</Button>
+        <Button onClick={() => HandleAddDigitScreen("6")}>6</Button>
+        <Button onClick={() => HandleAddDigitScreen("-")}>-</Button>
+        <Button onClick={() => HandleAddDigitScreen("1")}>1</Button>
+        <Button onClick={() => HandleAddDigitScreen("2")}>2</Button>
+        <Button onClick={() => HandleAddDigitScreen("3")}>3</Button>
+        <Button onClick={() => HandleAddDigitScreen("+")}>+</Button>
+        <Button
+          onClick={() => HandleAddDigitScreen("0")}
+          style={{ borderRadius: "0 0 0 8px" }}
+        >
+          0
+        </Button>
+        <Button onClick={() => HandleAddDigitScreen(".")}>.</Button>
+        <Button onClick={() => operation("backspace")}>{"<-"}</Button>
+        <Button
+          onClick={() => operation("=")}
+          style={{ borderRadius: "0 0 8px 0" }}
+        >
+          =
+        </Button>
       </div>
     </div>
   );

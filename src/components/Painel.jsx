@@ -2,11 +2,11 @@ import React from "react";
 
 import "./Painel.css";
 
-const Painel = () => {
+const Painel = ({ screenValue, result }) => {
   return (
     <div className="painel">
-      <span className="operation">25 + 25</span>
-      <span className="result">50</span>
+      <span className="operation">{screenValue}</span>
+      <span className="result">{result}</span>
     </div>
   );
 };
