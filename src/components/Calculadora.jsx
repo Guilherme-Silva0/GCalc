@@ -39,7 +39,7 @@ const Calculadora = ({
           0
         </Button>
         <Button onClick={() => HandleAddDigitScreen(".")}>.</Button>
-        <Button onClick={() => operation("backspace")}>{"<-"}</Button>
+        <Button onClick={() => operation("backspace")}>⇠</Button>
         <Button
           onClick={() => operation("=")}
           style={{ borderRadius: "0 0 8px 0" }}
