@@ -1,8 +1,11 @@
 @media (max-width: 550px) {
   .container {
-    width: 85vw !important;
+    width: 80vw !important;
   }
 }
 
 @media (max-width: 850px) and (min-width: 551px) {
+  .container {
+    width: 65vw !important;
+  }
 }
