@@ -5,36 +5,63 @@ import Calculadora from "./components/Calculadora";
 const App = () => {
   const [screenValue, setScrenValue] = useState("");
   const [result, setResult] = useState(0);
-  const [accumulator, setAccumulator] = useState();
+  const [isOperation, setIsOperation] = useState(false);
   const [operated, setOperated] = useState(false);
 
   const HandleAddDigitScreen = (digit) => {
     if (
-      digit === "+" ||
-      digit === "-" ||
-      digit === "÷" ||
-      (digit === "X" && operated)
+      (digit === "+" ||
+        digit === "-" ||
+        digit === "/" ||
+        digit === "*" ||
+        digit === ".") &&
+      isOperation &&
+      !operated
     ) {
-      console.log("+-*/");
+      setIsOperation(false);
+      const screenVal = screenValue + digit;
+      setScrenValue(screenVal);
+      return;
+    }
+
+    if (
+      (digit === "+" ||
+        digit === "-" ||
+        digit === "/" ||
+        digit === "*" ||
+        digit === ".") &&
+      !isOperation
+    ) {
+      return;
+    }
+
+    if (
+      (digit === "+" || digit === "-" || digit === "/" || digit === "*") &&
+      operated
+    ) {
       setOperated(false);
+      setIsOperation(false);
       setScrenValue(result + digit);
       return;
     }
 
     if (operated) {
       setScrenValue(digit);
+      setIsOperation(true);
       setOperated(false);
       return;
     }
 
-    setScrenValue(screenValue + digit);
+    const screenVal = screenValue + digit;
+    setScrenValue(screenVal);
+    setIsOperation(true);
   };
 
   const clear = () => {
     setOperated(false);
     setScrenValue("");
+    setIsOperation(false);
     setResult(0);
-    setAccumulator(0);
   };
 
   const operation = (oper) => {
@@ -42,21 +69,31 @@ const App = () => {
       let vscreen = screenValue;
       vscreen = vscreen.substring(0, vscreen.length - 1);
       setScrenValue(vscreen);
+      setIsOperation(true);
       setOperated(false);
       return;
     }
 
     try {
-      const res = eval(screenValue);
-      setAccumulator(res);
-      setResult(res);
-      setOperated(true);
+      if (screenValue !== "") {
+        const res = eval(screenValue);
+        setResult(res);
+        setOperated(true);
+      }
     } catch {
       setResult("ERRO");
     }
   };
 
-  return <Calculadora />;
+  return (
+    <Calculadora
+      screenValue={screenValue}
+      result={result}
+      clear={clear}
+      HandleAddDigitScreen={HandleAddDigitScreen}
+      operation={operation}
+    />
+  );
 };
 
 export default App;
